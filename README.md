@@ -19,9 +19,6 @@ O backend foi desenvolvido com **NestJS + TypeScript**, uma escolha estratégica
 4. **Type-Safety:** TypeScript oferece tipagem estática equivalente ao Java, com 
    iteração mais rápida e ecossistema moderno.
 
-**Resultado:** Um sistema completo, testado, documentado e pronto para produção, 
-entregue dentro do prazo com qualidade profissional.
-
 
 # Índice
 - [Sobre o Projeto](#sobre-o-projeto)
