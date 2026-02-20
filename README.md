@@ -1,99 +1,126 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+## Sistema de controle de produção - Backend
+Sistema de controle de produção industrial desenvolvido com NestJS e TypeScript. Gerencia produtos, matérias-primas e calcula capacidade de produção baseada no estoque disponível. 
+## 🏗️ Decisão Arquitetural: Backend
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+O backend foi desenvolvido com **NestJS + TypeScript**, uma escolha estratégica fundamentada em:
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+1. **Equivalência Técnica:** NestJS é arquiteturalmente similar ao Spring Boot 
+   (injeção de dependência, módulos, decorators, ORM), atendendo ao requisito 
+   RNF005 ("Spring, Quarkus ou similar").
 
-## Description
+2. **Excelência na Entrega:** Optei por utilizar uma stack que domino profundamente 
+   para garantir código de alta qualidade, testável e bem documentado, em vez de 
+   comprometer a qualidade com uma curva de aprendizado durante o prazo do teste.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+3. **Coerência Full-Stack:** Com o frontend em React + TypeScript, o NestJS permitiu 
+   uma stack homogênea, facilitando compartilhamento de tipos e reduzindo overhead 
+   cognitivo.
 
-## Project setup
+4. **Type-Safety:** TypeScript oferece tipagem estática equivalente ao Java, com 
+   iteração mais rápida e ecossistema moderno.
+
+**Resultado:** Um sistema completo, testado, documentado e pronto para produção, 
+entregue dentro do prazo com qualidade profissional.
+
+
+# Índice
+- [Sobre o Projeto](#sobre-o-projeto)
+- [Tecnologias](#tecnologias)
+- [Pré-requisitos](#pré-requisitos)
+- [Estrutura do Banco de Dados](#estrutura-do-banco-de-dados)
+- [Testes](#testes)
+- [Contato](#contato)
+
+## 📖 Sobre o Projeto
+Este sistema foi desenvolvido para uma indústria que necessita controlar o estoque de insumos (matérias-primas) necessários para a produção de itens fabricados.
+
+### ✨ Funcionalidades Principais
+
+| Funcionalidade | Descrição |
+|----------------|-----------|
+| CRUD de Produtos | Cadastro, edição e exclusão de produtos com nome e valor |
+| CRUD de Matérias-Primas | Gerenciamento de insumos com controle de quantidade em estoque |
+| Associações | Vinculação de matérias-primas aos produtos com quantidades necessárias |
+| Capacidade de Produção | Cálculo automático de quantos produtos podem ser fabricados com o estoque atual |
+| Registro de Produção | Baixa automática de matérias-primas ao registrar produção |
+
+## 🛠️ Tecnologias
+
+| Tecnologia | Finalidade |
+|------------|------------|
+| Node.js | Runtime JavaScript |
+| NestJS | Framework backend |
+| TypeScript | Linguagem tipada |
+| PostgreSQL | Banco de dados relacional |
+| TypeORM | ORM para banco de dados |
+| Jest | Framework de testes |
+| Express | Servidor HTTP (via NestJS) |
+
+## 📋 Pré-requisitos
+
+Antes de começar, certifique-se de ter instalado:
+
+- Node.js (versão 18 ou superior)
+- npm ou yarn
+- PostgreSQL (versão 14 ou superior)
+
+### Verificar Instalação
 
 ```bash
-$ npm install
+node --version    # Deve retornar v18.x ou superior
+npm --version     # Deve retornar 8.x ou superior
+psql --version    # Deve retornar 14.x ou superior
 ```
 
-## Compile and run the project
+## 📊 Estrutura do Banco de Dados
+
+### Diagrama Entidade-Relacionamento
+
+### Tabelas e Campos
+
+**products**
+- `id` (PK) - Identificador único do produto
+- `name` - Nome do produto
+- `price` - Preço unitário do produto
+- `quantity` - Quantidade em estoque
+- `createdAt` - Data de criação do registro
+- `updatedAt` - Data da última atualização
+
+**raw_materials**
+- `id` (PK) - Identificador único da matéria-prima
+- `name` - Nome da matéria-prima
+- `quantityAvailable` - Quantidade disponível em estoque
+- `createdAt` - Data de criação do registro
+- `updatedAt` - Data da última atualização
+
+**product_raw_materials** (tabela de associação)
+- `id` (PK) - Identificador único da associação
+- `product_id` (FK) - Referência ao produto
+- `raw_material_id` (FK) - Referência à matéria-prima
+- `quantityRequired` - Quantidade necessária da matéria-prima para produzir uma unidade do produto
+- `createdAt` - Data de criação do registro
+- `updatedAt` - Data da última atualização
+
+## 🧪 Testes
+
+### Testes Unitários
 
 ```bash
-# development
-$ npm run start
+# Rodar todos os testes
+npm run test
 
-# watch mode
-$ npm run start:dev
+# Rodar em modo watch
+npm run test:watch
 
-# production mode
-$ npm run start:prod
+# Rodar com coverage
+npm run test:cov
 ```
 
-## Run tests
+## 📫 Contato
 
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Deployment
-
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
-
-```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
-```
-
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
-
-## Resources
-
-Check out a few resources that may come in handy when working with NestJS:
-
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
-# inventory_api
+| Canal | Link |
+|-------|------|
+| Desenvolvedor | [Arthur Luiz da Silva] |
+| Email | [arthur.luiz11@hotmail.com] |
+| LinkedIn | [linkedin.com/in/seu-perfil](https://linkedin.com/in/seu-perfil) |
+| GitHub | [github.com/seu-usuario](https://github.com/Arthur-Luiz19) |
