@@ -122,5 +122,5 @@ npm run test:cov
 |-------|------|
 | Desenvolvedor | [Arthur Luiz da Silva] |
 | Email | [arthur.luiz11@hotmail.com] |
-| LinkedIn | [linkedin.com/in/seu-perfil](https://linkedin.com/in/seu-perfil) |
-| GitHub | [github.com/seu-usuario](https://github.com/Arthur-Luiz19) |
+| LinkedIn | [linkedin.com/in/arthur-luiz-da-silva](www.linkedin.com/in/arthur-luiz-da-silva) |
+| GitHub | [github.com/Arthur-Luiz19](https://github.com/Arthur-Luiz19) |
