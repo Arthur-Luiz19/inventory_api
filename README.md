@@ -1,5 +1,12 @@
 ## Sistema de controle de produção - Backend
 Sistema de controle de produção industrial desenvolvido com NestJS e TypeScript. Gerencia produtos, matérias-primas e calcula capacidade de produção baseada no estoque disponível. 
+
+## 🎨 Frontend
+
+O frontend deste sistema está disponível em um repositório separado:
+
+📦 **Repositório:** [sistema-controle-producao-frontend](https://github.com/Arthur-Luiz19/sistema-controle-producao-frontend)
+
 ## 🏗️ Decisão Arquitetural: Backend
 
 O backend foi desenvolvido com **NestJS + TypeScript**, uma escolha estratégica fundamentada em:
