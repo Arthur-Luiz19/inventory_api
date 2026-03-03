@@ -11,9 +11,7 @@ O frontend deste sistema está disponível em um repositório separado:
 
 O backend foi desenvolvido com **NestJS + TypeScript**, uma escolha estratégica fundamentada em:
 
-1. **Equivalência Técnica:** NestJS é arquiteturalmente similar ao Spring Boot 
-   (injeção de dependência, módulos, decorators, ORM), atendendo ao requisito 
-   RNF005 ("Spring, Quarkus ou similar").
+1. **Equivalência Técnica:** injeção de dependência, módulos, decorators, ORM.
 
 2. **Excelência na Entrega:** Optei por utilizar uma stack que domino profundamente 
    para garantir código de alta qualidade, testável e bem documentado, em vez de 
@@ -23,7 +21,7 @@ O backend foi desenvolvido com **NestJS + TypeScript**, uma escolha estratégica
    uma stack homogênea, facilitando compartilhamento de tipos e reduzindo overhead 
    cognitivo.
 
-4. **Type-Safety:** TypeScript oferece tipagem estática equivalente ao Java, com 
+4. **Type-Safety:** TypeScript oferece tipagem estática com 
    iteração mais rápida e ecossistema moderno.
 
 
